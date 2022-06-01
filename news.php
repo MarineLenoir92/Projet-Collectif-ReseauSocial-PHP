@@ -105,7 +105,8 @@
                     ?>
                     <article>
                         <h3>
-                            <time><?php echo $post['created'] ?></time>
+                            <!--  -->
+                            <time><?php echo $post['created'] ?></time> 
                         </h3>
                         <address>Par <?php echo $post['author_name'] ?></address>
                         <div>
