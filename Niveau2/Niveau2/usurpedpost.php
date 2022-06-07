@@ -5,7 +5,7 @@ session_start();
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>ReSoC - crreate_message</title> 
+        <title>ReSoC - Post d'usurpateur</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
     </head>
@@ -43,7 +43,7 @@ session_start();
                     /**
                      * BD
                      */
-                    $mysqli = new mysqli("localhost", "root", "root", "socialnetwork");
+                    $mysqli = new mysqli("localhost", "root", "root", "socialnetwork_tests");
                     /**
                      * Récupération de la liste des auteurs
                      */
@@ -69,8 +69,8 @@ session_start();
                         // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
                         echo "<pre>" . print_r($_POST, 1) . "</pre>";
                         // et complétez le code ci dessous en remplaçant les ???
-                        $authorId = $_POST['auteur'];
-                        $postContent = $_POST['message'];
+                        $authorId = $_POST['???'];
+                        $postContent = $_POST['???'];
 
 
                         //Etape 3 : Petite sécurité
@@ -78,14 +78,17 @@ session_start();
                         $authorId = intval($mysqli->real_escape_string($authorId));
                         $postContent = $mysqli->real_escape_string($postContent);
                         //Etape 4 : construction de la requete
-                        $lInstructionSql = "INSERT INTO posts (id, user_id, content, created) "
+                        $lInstructionSql = "INSERT INTO posts "
+                                . "(id, user_id, content, created, permalink, post_id) "
                                 . "VALUES (NULL, "
                                 . $authorId . ", "
                                 . "'" . $postContent . "', "
-                                . "NOW());"
+                                . "NOW(), "
+                                . "'', "
+                                . "NULL);"
                                 ;
-                       // echo $lInstructionSql;
-                        // Etape 5 : execution 
+                        echo $lInstructionSql;
+                        // Etape 5 : execution
                         $ok = $mysqli->query($lInstructionSql);
                         if ( ! $ok)
                         {
@@ -93,56 +96,6 @@ session_start();
                         } else
                         {
                             echo "Message posté en tant que :" . $listAuteurs[$authorId];
-                        }
-                    }
-                    ?>                     
-                    <?php 
-                    $listTags = [];
-                    $tagsInfo = "SELECT * FROM tags";
-                    $tagsResponse = $mysqli->query($tagsInfo);
-                    while ($tags = $tagsResponse->fetch_assoc())
-                    {
-                        $listTags[$tags['id']] = $tags['label'];
-                    }
-
-
-                    /**
-                     * TRAITEMENT DU FORMULAIRE
-                     */
-                    // Etape 1 : vérifier si on est en train d'afficher ou de traiter le formulaire
-                    // si on recoit un champs email rempli il y a une chance que ce soit un traitement
-                    // En cas de bug vérifier la ligne suivante
-                    $enCoursDeTraitement = isset($_POST['post_tags']); 
-                    if ($enCoursDeTraitement)
-                    {
-                        // on ne fait ce qui suit que si un formulaire a été soumis.
-                        // Etape 2: récupérer ce qu'il y a dans le formulaire @todo: c'est là que votre travaille se situe
-                        // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
-                        echo "<pre>" . print_r($_POST, 1) . "</pre>";
-                        // et complétez le code ci dessous en remplaçant les ???
-                        $tagsId = $_POST['tag'];
-                        $tagsContent = $_POST['label'];
-
-
-                        //Etape 3 : Petite sécurité
-                        // pour éviter les injection sql : https://www.w3schools.com/sql/sql_injection.asp
-                        $tagsId = intval($mysqli->real_escape_string($tagsId));
-                        $tagsContent = $mysqli->real_escape_string($tagsContent);
-                        //Etape 4 : construction de la requete
-                        // Continuer à partir de la ligne suivante
-                        $tagsInstructionSql = "INSERT INTO posts_tags (post_id, tag_id) "
-                                . "VALUES (, "
-                                . $tagsContent . ";);"
-                                ;
-                       // echo $lInstructionSql;
-                        // Etape 5 : execution 
-                        $oki = $mysqli->query($tagsInstructionSql);
-                        if ( ! $oki)
-                        {
-                            echo "Impossible d'ajouter le message: " . $mysqli->error;
-                        } else
-                        {
-                            echo "Message posté en tant que :" . $listTags[$tagsId];
                         }
                     }
                     ?>                     
@@ -156,19 +109,6 @@ session_start();
                                         echo "<option value='$id'>$alias</option>";
                                     ?>
                                 </select></dd>
-                            
-                            <dt><label for='message'>Message</label></dt>
-                            <dd><textarea name='message'></textarea></dd>
-                        </dl>
-                        <dl>
-                            <dt><label for='tags'>Tag à choisir</label></dt>
-                            <dd><select name='tags'>
-                                    <?php
-                                    foreach ($listTags as $id => $label)
-                                        echo "<option value='$id'>$label</option>";
-                                    ?>
-                                </select></dd>
-                            
                             <dt><label for='message'>Message</label></dt>
                             <dd><textarea name='message'></textarea></dd>
                         </dl>
