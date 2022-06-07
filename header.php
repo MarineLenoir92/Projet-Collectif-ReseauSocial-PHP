@@ -7,6 +7,8 @@
                 <a href="wall.php?user_id=5">Mur</a>
                 <a href="feed.php?user_id=5">Flux</a>
                 <a href="tags.php?tag_id=1">Mots-clés</a>
+                <a href="create_message.php">Votre message ici</a>
+                
             </nav>
             <nav id="user">
                 <a href="#">Profil</a>

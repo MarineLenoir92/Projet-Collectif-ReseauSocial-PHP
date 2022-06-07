@@ -91,10 +91,13 @@
                             <a href="">#<?php echo $post['taglist'] ?></a>,
                          </footer>
                     </article>
+                    
                 <?php } ?>
-
+            
 
             </main>
+
         </div>
+        
     </body>
 </html>
