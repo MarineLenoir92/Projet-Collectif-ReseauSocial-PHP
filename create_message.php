@@ -97,6 +97,7 @@ session_start();
                     }
                     ?>                     
                     <?php 
+                    $IdOfLastPost = "SELECT id FROM posts ORDER BY DESC LIMIT 1 ";
                     $listTags = [];
                     $tagsInfo = "SELECT * FROM tags";
                     $tagsResponse = $mysqli->query($tagsInfo);
