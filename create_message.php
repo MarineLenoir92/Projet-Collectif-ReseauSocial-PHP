@@ -97,7 +97,7 @@ session_start();
                     }
                     ?>                     
                     <?php 
-                    $IdOfLastPost = "SELECT id FROM posts ORDER BY DESC LIMIT 1 ";
+                    $IdOfLastPost = "";
                     $listTags = [];
                     $tagsInfo = "SELECT * FROM tags";
                     $tagsResponse = $mysqli->query($tagsInfo);
@@ -105,12 +105,13 @@ session_start();
                     {
                         $listTags[$tags['id']] = $tags['label'];
                     }
+                    
 
 
                     /**
                      * TRAITEMENT DU FORMULAIRE
                      */
-                    // Etape 1 : vérifier si on est en train d'afficher ou de traiter le formulaire
+                    // Etape 1 : vérifier 2si on est en train d'afficher ou de traiter le formulaire
                     // si on recoit un champs email rempli il y a une chance que ce soit un traitement
                     // En cas de bug vérifier la ligne suivante
                     $enCoursDeTraitement = isset($_POST['post_tags']); 
@@ -131,10 +132,13 @@ session_start();
                         $tagsContent = $mysqli->real_escape_string($tagsContent);
                         //Etape 4 : construction de la requete
                         // Continuer à partir de la ligne suivante
-                        $tagsInstructionSql = "INSERT INTO posts_tags (post_id, tag_id) "
-                                . "VALUES (, "
-                                . $tagsContent . ";);"
+                        $tagsInstructionSql = "INSERT INTO posts_tags (id, post_id, tag_id)"
+                                . "VALUES (NULL, "
+                                . $IdOfLastPost . ", "
+                                . "'" . $tagsId . "',);"
                                 ;
+
+                      
                        // echo $lInstructionSql;
                         // Etape 5 : execution 
                         $oki = $mysqli->query($tagsInstructionSql);
