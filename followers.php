@@ -43,7 +43,7 @@ session_start();
                 {
                 ?>
                 <article>
-                    <img src="user.jpg" alt="blason"/>
+                    <img src="userbis.jpg" alt="Portrait de l'utilisatrice"/>
                     <a href="wall.php?user_id=<?php echo $post['id']?>"><h3><?php echo $post['alias'] ?></h3></a>
                     <p>id: <?php echo $post['id'] ?></p>
                 </article>
