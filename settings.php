@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -20,7 +17,6 @@ session_start();
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les informations de l'utilisatrice
                         n° <?php echo intval($_GET['user_id']) ?></p>
-
                 </section>
             </aside>
             <main>

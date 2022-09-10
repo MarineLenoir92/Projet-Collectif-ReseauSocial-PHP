@@ -1,8 +1,12 @@
-
+<!-- Inclure session_start dans un fichier header puis include sur toutes les autrs pages évite les oublis d'ouverture de session -->
+<?php
+session_start();
+?>
 <header>
             <img src="resoc.jpg" alt="Logo de notre réseau social"/>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
+                <!-- Utiliser la variable superglobale $_SESSION permet de personnaliser la page en fonction de l'utilsateur connecté, URL dédié -->
                 <a href="wall.php?user_id=<?php echo $_SESSION['connected_id']?>">Mur</a>
                 <a href="feed.php?user_id=<?php echo $_SESSION['connected_id']?>">Flux</a>
                 <a href="tags.php?tag_id=1">Mots-clés</a>
