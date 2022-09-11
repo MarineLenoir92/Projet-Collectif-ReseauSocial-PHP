@@ -1,3 +1,13 @@
+<!-- Contrôle de l'accès à la page; si utilisateur n'est pas connecté à son compte = refus accès à la page "Flux" -->
+<?php
+session_start();
+if (!isset($_SESSION['connected_id'])){
+    //"header(location: )" permet d'éditer une requête HTTP en brut et de renvoyer vers une autre page en cas de non connexion//
+    header("location: error.php");
+    //"exit" permet de s'assurer que la suite du code ne sera pas éxecutée si condition définie auparavant est remplie//
+    exit;
+}
+?>
 <!doctype html>
 <html lang="fr">
     <head>
