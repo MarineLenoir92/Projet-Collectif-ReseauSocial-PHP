@@ -5,18 +5,17 @@
         <title>ReSoC - Connexion</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     </head>
-    <body>
-    <?php include("header.php"); ?>
-        <div id="wrapper" >
+    <body> 
+        <video id="backgroundvideo" autoplay loop muted poster="videologin.mp4">
+            <source src="videologin.mp4" type="video/mp4">
+        </video>
 
-            <aside>
-                <h2>Présentation</h2>
-                <p>Bienvenu sur notre réseau social.</p>
-            </aside>
-            <main>
-                <article>
-                    <h2>Connexion</h2>
+        <div id="login-box" >
+            <h2 id="login-title">Login</h2>
                     <?php
                     /**
                      * TRAITEMENT DU FORMULAIRE
@@ -73,17 +72,19 @@
                     ?>                     
                     <form action="login.php" method="post">
                         <input type='hidden'name='login' value='login'>
-                        <dl>
-                            <dt><label for='email'>E-Mail</label></dt>
-                            <dd><input type='email'name='email'></dd>
-                            <dt><label for='motpasse'>Mot de passe</label></dt>
-                            <dd><input type='password'name='motpasse'></dd>
-                        </dl>
-                        <input type='submit'>
+                            <div class="user-box">
+                                <dt><label for='email'>E-Mail</label></dt>
+                                <dd><input type='email'name='email'></dd>
+                            </div>
+                            <div class="user-box">
+                                <dt><label for='motpasse'>Mot de passe</label></dt>
+                                <dd><input type='password'name='motpasse'></dd>
+                            </div>
+                        <input type='submit' id="submit" value="Se Connecter">
                     </form>
-                    <p>
+                    <p id="nocount">
                         Pas de compte?
-                        <a href='registration.php'>Inscrivez-vous.</a>
+                        <a href='registration.php'>Inscrivez-vous</a>
                     </p>
 
                 </article>
