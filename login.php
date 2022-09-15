@@ -16,9 +16,7 @@ session_start();
         <video id="backgroundvideo" autoplay loop muted poster="videologin.mp4">
             <source src="videologin.mp4" type="video/mp4">
         </video>
-
-        <div id="login-box" >
-            <h2 id="login-title">Login</h2>
+            
                     <?php
                     /**
                      * TRAITEMENT DU FORMULAIRE
@@ -57,11 +55,13 @@ session_start();
                         $res = $mysqli->query($lInstructionSql);
                         //"fetch_assoc() permet de créer un tableau associatif des données récupérées en base de données sous la forme d'une paire Clé:Valeur 
                         $user = $res->fetch_assoc();
-                        //si le mot de passe enregistré dans la table "users" diffère du mot de passe saisi = connexion échoué//
-                        if ( ! $user OR $user["password"] != $passwdAVerifier)
+                        //si l'email ou mot de passe enregistrés dans la table "users" diffère des données saisies = connexion échoué//
+                        if ( $user["email"] != $emailAVerifier OR $user["password"] != $passwdAVerifier)
                         {
-                            echo "La connexion a échouée. ";
-                            
+                            //affichage du pop-up avec message erreur//
+                            echo "<div id='popupmessage'>La connexion a échouée.</div>";
+                
+                
                         } else
                         {
                             //si login correct, renvoie vers page d'accueil news.php//
@@ -73,7 +73,10 @@ session_start();
                             
                         }
                     }
-                    ?>                     
+                    ?> 
+                    </div>  
+                <div id="login-box" >
+                    <h2 id="login-title">Login</h2>                  
                     <form action="login.php" method="post">
                         <input type='hidden'name='login' value='login'>
                             <div class="user-box">
@@ -90,9 +93,7 @@ session_start();
                         Pas de compte?
                         <a href='registration.php' id="register" >Inscrivez-vous</a>
                     </p>
-
                 </article>
             </main>
-        </div>
     </body>
 </html>

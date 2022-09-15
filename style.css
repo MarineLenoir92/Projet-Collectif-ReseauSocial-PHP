@@ -86,6 +86,28 @@ body>header #user:hover ul{
     z-index: -1;
 }
 
+
+
+#popupmessage{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 63%;
+    width: 500px;
+    height: 300px;
+    font-family: 'Poiret One', cursive;
+    font-size: 16px;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    opacity: 0.9;
+}
+
+
 #login-box{
     position: absolute;
     top: 25%;
@@ -171,8 +193,10 @@ dt{
 #register:hover{
     color: #0077b6;
     text-decoration: underline;
-    /* font-weight: bolder; */
+    display: flex;
 }
+
+
 /* login.php */
 
 #wrapper{
