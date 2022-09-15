@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -61,12 +64,13 @@
                             
                         } else
                         {
-                            //on affiche l'alias donné lors de l'inscription et stocké dans la table "users" dans la colonne "alias"
-                            echo "Votre connexion est un succès : " . $user['alias'] . ".";
+                            //si login correct, renvoie vers page d'accueil news.php//
+                            header("location: news.php");
                             // Etape 7 : Se souvenir que l'utilisateur s'est connecté pour la suite
                             // documentation: https://www.php.net/manual/fr/session.examples.basic.php
                             // l'id du user connecté est stocké dans "$SESSION['connected_id']
                             $_SESSION['connected_id']=$user['id'];
+                            
                         }
                     }
                     ?>                     
