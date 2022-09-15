@@ -164,7 +164,14 @@ dt{
     text-align: center;
     letter-spacing: 1px;
     font-size: 18px;
-    margin-top: 4%;
+    margin-top: 6%;
+    margin-bottom: -4%;
+}
+
+#register:hover{
+    color: #0077b6;
+    text-decoration: underline;
+    /* font-weight: bolder; */
 }
 /* login.php */
 

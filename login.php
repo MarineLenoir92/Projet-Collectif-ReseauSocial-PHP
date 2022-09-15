@@ -88,7 +88,7 @@ session_start();
                     </form>
                     <p id="nocount">
                         Pas de compte?
-                        <a href='registration.php'>Inscrivez-vous</a>
+                        <a href='registration.php' id="register" >Inscrivez-vous</a>
                     </p>
 
                 </article>
