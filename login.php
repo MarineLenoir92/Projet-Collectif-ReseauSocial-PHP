@@ -80,8 +80,8 @@ session_start();
                     }
                     ?> 
                     </div>  
-                <div id="login-box" >
-                    <h2 id="login-title">Login</h2>                  
+                <div id="login-box">
+                    <h2 class="login-title">Login</h2>                  
                     <form action="login.php" method="post">
                         <input type='hidden'name='login' value='login'>
                             <div class="user-box">

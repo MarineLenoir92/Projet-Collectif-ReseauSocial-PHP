@@ -75,7 +75,7 @@ body>header #user:hover ul{
     display:block;
 }
 
-/* login.php */
+/* BEGIN login.php */
 
 #backgroundvideo{
     width: 100vw;
@@ -181,7 +181,7 @@ button::after {
     opacity: 0.9;
 }
 
-#login-title{
+.login-title{
     font-family: 'Poiret One', cursive;
     letter-spacing: 3px;
     font-size: 30px;
@@ -258,8 +258,36 @@ dt{
     color: #0e697c;
 }
 
+/* END: login.php */
 
-/* login.php */
+/* BEGIN: registration.php */
+
+#bgregistration{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    margin: 0;
+    filter: grayscale(20%);
+    z-index: -1;
+}
+
+#registration-box{
+    position: absolute;
+    top: 15%;
+    right: 20%;
+    height: 500px;
+    width: 900px;
+    padding: 40px;
+    background-color: white;
+    z-index: 1;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    opacity: 0.9;
+}
+
+/* END: registration.php */
 
 #wrapper{
     display:flex;    

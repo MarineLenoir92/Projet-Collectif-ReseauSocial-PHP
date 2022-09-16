@@ -8,36 +8,12 @@ session_start();
         <title>ReSoC - Inscription</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header>
-            <img src="resoc.jpg" alt="Logo de notre réseau social"/>
-            <nav id="menu">
-                <a href="news.php">Actualités</a>
-                <a href="wall.php?user_id=5">Mur</a>
-                <a href="feed.php?user_id=5">Flux</a>
-                <a href="tags.php?tag_id=1">Mots-clés</a>
-            </nav>
-            <nav id="user">
-                <a href="#">Profil</a>
-                <ul>
-                    <li><a href="settings.php?user_id=5">Paramètres</a></li>
-                    <li><a href="followers.php?user_id=5">Mes suiveurs</a></li>
-                    <li><a href="subscriptions.php?user_id=5">Mes abonnements</a></li>
-                </ul>
-
-            </nav>
-        </header>
-
-        <div id="wrapper" >
-
-            <aside>
-                <h2>Présentation</h2>
-                <p>Bienvenu sur notre réseau social.</p>
-            </aside>
-            <main>
-                <article>
-                    <h2>Inscription</h2>
+        <img id="bgregistration"  src="imgregistration.jpg" alt="fond écran paysage montagne">
                     <?php
                     /**
                      * TRAITEMENT DU FORMULAIRE
@@ -85,9 +61,11 @@ session_start();
                             echo " <a href='login.php'>Connectez-vous.</a>";
                         }
                     }
-                    ?>                     
+                    ?>  
+                    <div id="registration-box">
+                        <h2 class="login-title">Inscription</h2>                   
                     <form action="registration.php" method="post">
-                        <input type='hidden'name='???' value='achanger'>
+                        <input type='hidden'name='registration' value='registration'>
                         <dl>
                             <dt><label for='pseudo'>Pseudo</label></dt>
                             <dd><input type='text'name='pseudo'></dd>
@@ -98,7 +76,7 @@ session_start();
                         </dl>
                         <input type='submit'>
                     </form>
-                </article>
+                </div>
             </main>
         </div>
     </body>
