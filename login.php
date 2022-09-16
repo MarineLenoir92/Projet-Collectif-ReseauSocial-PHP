@@ -59,9 +59,14 @@ session_start();
                         if ( $user["email"] != $emailAVerifier OR $user["password"] != $passwdAVerifier)
                         {
                             //affichage du pop-up avec message erreur//
-                            echo "<div id='popupmessage'>La connexion a échouée.</div>";
-                
-                
+                            echo "<div id='popupbox'>
+                            <button type='button' onclick='window.history.back()'>
+                                <span class='close'>Close</span>
+                            </button>
+                            <h1 id=popuptitle>Oups !</h1>
+                            <p id='popupmessage'>Email ou Mot de Passe erronés</p>
+                            <a href='mailto: away@outlook.fr' id='popupmail'>Identifiants oubliés ?</a>
+                            </div>";
                         } else
                         {
                             //si login correct, renvoie vers page d'accueil news.php//

@@ -87,24 +87,83 @@ body>header #user:hover ul{
 }
 
 
-
-#popupmessage{
+#popupbox{
     position: absolute;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     top: 50%;
     left: 63%;
     width: 500px;
     height: 300px;
-    font-family: 'Poiret One', cursive;
-    font-size: 16px;
-    color: black;
     background-color: white;
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     opacity: 0.9;
+}
+
+button {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+  
+.close {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+  
+button::before,
+button::after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      background: #333;
+      display: block;
+      transform: rotate(45deg) translateX(0px);
+      position: absolute;
+      left: 50%;
+      top: 0;
+}
+  
+button::after {
+      transform: rotate(-45deg) translateX(0px);
+}
+
+#popuptitle{
+    font-family: 'Poiret One', cursive;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: black;
+    letter-spacing: 3px;
+}
+
+#popupmessage{
+    font-family: 'Poiret One', cursive;
+    font-size: 28px;
+    color: black;
+}
+
+#popupmail{
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    color: black;
+}
+
+#popupmail:hover{
+    color: #0e697c;
 }
 
 
@@ -179,6 +238,11 @@ dt{
     overflow: hidden;
     transition: .5s;
     margin-top: 6%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    border: gray 1px solid;
 } 
 
 #nocount{
@@ -191,9 +255,7 @@ dt{
 }
 
 #register:hover{
-    color: #0077b6;
-    text-decoration: underline;
-    display: flex;
+    color: #0e697c;
 }
 
 
