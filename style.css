@@ -245,6 +245,7 @@ dt{
     border: gray 1px solid;
 } 
 
+
 #nocount{
     font-family: 'Poiret One', cursive;
     text-align: center;
@@ -285,6 +286,25 @@ dt{
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     opacity: 0.9;
+}
+
+.label{
+    top: 0 !important;
+    left: 0 !important;
+    font-size: 100% !important;
+    color: black !important;
+    pointer-events: none !important;
+}
+
+.input{
+    font-size:88% !important;
+    color: black;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background: transparent; 
+    text-align: center;
+    width: 60%;
 }
 
 /* END: registration.php */

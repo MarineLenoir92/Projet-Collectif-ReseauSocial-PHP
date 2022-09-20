@@ -24,10 +24,9 @@ session_start();
                     if ($enCoursDeTraitement)
                     {
                         // on ne fait ce qui suit que si un formulaire a été soumis.
-                        // Etape 2: récupérer ce qu'il y a dans le formulaire @todo: c'est là que votre travaille se situe
-                        // observez le résultat de cette ligne de débug (vous l'effacerez ensuite)
+        
                         echo "<pre>" . print_r($_POST, 1) . "</pre>";
-                        // et complétez le code ci dessous en remplaçant les ???
+                       
                         $new_email = $_POST['email'];
                         $new_alias = $_POST['pseudo'];
                         $new_passwd = $_POST['motdepasse'];
@@ -66,15 +65,19 @@ session_start();
                         <h2 class="login-title">Inscription</h2>                   
                     <form action="registration.php" method="post">
                         <input type='hidden'name='registration' value='registration'>
-                        <dl>
-                            <dt><label for='pseudo'>Pseudo</label></dt>
-                            <dd><input type='text'name='pseudo'></dd>
-                            <dt><label for='email'>E-Mail</label></dt>
-                            <dd><input type='email'name='email'></dd>
-                            <dt><label for='motpasse'>Mot de passe</label></dt>
-                            <dd><input type='password'name='motpasse'></dd>
-                        </dl>
-                        <input type='submit'>
+                        <div class="user-box">
+                            <dt><label class="label" for='pseudo'>Pseudo</label></dt>
+                            <dd><input class="input" type='text'name='pseudo'></dd>
+                        </div>
+                        <div class="user-box">
+                            <dt><label class="label" for='email'>E-Mail</label></dt>
+                            <dd><input class="input" type='email'name='email'></dd>
+                        </div>
+                        <div class="user-box">
+                            <dt><label class="label" for='motpasse'>Mot de passe</label></dt>
+                            <dd><input class="input" type='password'name='motpasse'></dd>
+                        </div>
+                        <input type='submit' id="submit" value="S'inscrire">
                     </form>
                 </div>
             </main>
