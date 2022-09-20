@@ -3,7 +3,7 @@
 }
 
 body{
-    background-color: #f2e1d7;
+    background-color: #EBD9D5;
     font-family: Arial;
     margin: 0;
     padding: 0;
@@ -13,46 +13,77 @@ body{
 a{text-decoration: none; color:black;}
 a:hover{text-decoration: underline;}
 
+/* BEGIN header.php */
+
 body>header{
     background-color: #fff;
     display:flex;
-    width:80em;
+    width:100%;
     margin:0 auto 2em auto;    
     padding:0;
+    position: static;
+    font-family: 'Poiret One', cursive;
+    align-items: center;
+    justify-content: center;
 
 }
+
+body>header div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 body>header img{
-    height:5em;
+    height:2.5em; 
+}
+
+body>header h1{
+    display: flex;
+    font-family: 'Poiret One', cursive; 
+    font-size: 120%;
+    align-items: center;
 }
 
 body>header #menu {
     display:flex;
     width:50%;
-    align-items: stretch;
-    border-left: 1px solid #99b;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #FCCBB5;
 }
 body>header #menu a{
     flex:1;
     text-align: center;
-    padding-top:2em;
-    border-right: 1px solid #99b;
+    border-right: 1px solid #FCCBB5;
+    font-family: 'Poiret One', cursive; 
+    font-size: 120%;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+    
 }
 body>header a:hover
 {
-    background-color: #99b;
+    background-color: #FCCBB5;
 }
 body>header ul{list-style: none;}
 body>header #user
 {
     margin-left: auto;
     flex:0.2;
-    border-left: 1px solid #99b;
 }
 body>header #user>a{
-    display:block;
+    display: flex;
     text-align: center;
+    justify-content: center;
     padding:2em 0;
     width:100%;
+    text-transform: uppercase;
+    font-family: 'Poiret One', cursive; 
+    letter-spacing: 3px;
+    font-size: 120%;
+    font-weight: bolder;
 }
 body>header #user ul{ 
     display: none;
@@ -61,20 +92,18 @@ body>header #user ul{
     margin:0;
     margin-left:-5em;
     background-color: #fff;
-    border: 1px solid #99b;
-
     z-index: 1;
 }
 body>header #user ul li a{
     display:block;
     width:10em;
     padding:1em;
-    border-bottom: 1px solid #99b;
 }
 body>header #user:hover ul{
     display:block;
 }
 
+/* END header.php */
 /* BEGIN login.php */
 
 #backgroundvideo{
