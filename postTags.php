@@ -8,6 +8,7 @@ session_start();
         <title>ReSoC - PostTags</title> 
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
     </head>
     <body>
     <?php include("header.php"); ?>
@@ -55,7 +56,7 @@ session_start();
                     if ($enCoursDeTraitement)
                     {
                         
-                        echo "<pre>" . print_r($_POST, 1) . "</pre>";
+                        // echo "<pre>" . print_r($_POST, 1) . "</pre>";
                         
                         $authorId = $_POST['auteur'];
                         $postContent = $_POST['message'];

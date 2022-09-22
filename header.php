@@ -4,9 +4,9 @@ session_start();
 ?> -->
 <header>   
             <div>
-            <img src="logo.jpg" alt="Logo de notre réseau social"/>
-            <h2>MapAway</h2>
-</div>
+                <img src="logo.jpg" alt="Logo de notre réseau social"/>
+                <h2>MapAway</h2>
+            </div>
             <nav id="menu">
                 <a href="news.php">Actualités</a>
                 <!-- Utiliser la variable superglobale $_SESSION permet de personnaliser la page en fonction de l'utilsateur connecté, URL dédié -->

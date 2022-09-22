@@ -9,18 +9,19 @@ session_start();
         <meta name="author" content="Julien Falconnet">
         <link rel="stylesheet" href="style.css"/>
         <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
     <?php include("header.php"); ?>
         <div id="wrapper">
-            <aside>
+            <nav>
                 <img src="userbis.jpg" alt="Portrait de l'utilisatrice"/>
                 <section>
                     <h3>Présentation</h3>
                     <p>Sur cette page vous trouverez les derniers messages de
                         tous les utilisatrices du site.</p>
                 </section>
-            </aside>
+            </nav>
             <main>
                 
                 <?php
@@ -41,6 +42,7 @@ session_start();
                     SELECT posts.content,
                     posts.created,
                     posts.user_id,
+                    posts.photo,
                     users.alias as author_name,  
                     count(likes.id) as like_number,  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
@@ -76,6 +78,7 @@ session_start();
                         <a href="wall.php?user_id=<?php echo $post['user_id']?>"><address>Par <?php echo $post['author_name'] ?></address></a>
                         <div>
                             <p><?php echo $post['content'] ?></p>
+                            <img src=<?php echo $post['photo']?>/>
                         </div>
                         <footer>
                             <small>♥<?php echo $post['like_number'] ?></small>
@@ -86,24 +89,15 @@ session_start();
                     // avec le <?php ci-dessus on retourne en mode php 
                 }// cette accolade ferme et termine la boucle while ouverte avant.
                 ?>
-
             </main>
+            <aside>
+                <img src="userbis.jpg" alt="Portrait de l'utilisatrice"/>
+                <section>
+                    <h3>Présentation</h3>
+                    <p>Sur cette page vous trouverez les derniers messages de
+                        tous les utilisatrices du site.</p>
+                </section>
+            </aside>
         </div>
     </body>
 </html>
-
-    © 2022 GitHub, Inc.
-
-    Terms
-    Privacy
-    Security
-    Status
-    Docs
-    Contact GitHub
-    Pricing
-    API
-    Training
-    Blog
-    About
-
-Loading complete
