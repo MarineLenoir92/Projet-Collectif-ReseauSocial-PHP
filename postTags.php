@@ -55,8 +55,7 @@ session_start();
                     $enCoursDeTraitement = isset($_POST['auteur']);
                     if ($enCoursDeTraitement)
                     {
-                        
-                        // echo "<pre>" . print_r($_POST, 1) . "</pre>";
+                    
                         
                         $authorId = $_POST['auteur'];
                         $postContent = $_POST['message'];

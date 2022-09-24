@@ -3,8 +3,8 @@
 }
 
 body{
-    background-color: #EBD9D5;
-    font-family: Arial;
+    /* background-color: #EBD9D5; */
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
 }
@@ -25,6 +25,7 @@ body>header{
     font-family: 'Poiret One', cursive;
     align-items: center;
     justify-content: center;
+    box-shadow: 0 1px 25px rgba(0,0,0,.6);
 
 }
 
@@ -50,12 +51,12 @@ body>header #menu {
     width:50%;
     align-items: center;
     justify-content: center;
-    border-left: 1px solid #FCCBB5;
+    border-left: 1px solid black;
 }
 body>header #menu a{
     flex:1;
     text-align: center;
-    border-right: 1px solid #FCCBB5;
+    border-right: 1px solid black;
     font-family: 'Poiret One', cursive; 
     font-size: 120%;
     text-transform: uppercase;
@@ -106,7 +107,7 @@ body>header #user:hover ul{
 /* END header.php */
 /* BEGIN login.php */
 
-#backgroundvideo{
+video{
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -349,7 +350,8 @@ dt{
     background-color: #fff;
     flex:1;
     padding:1em;
-    border-radius: 1em;    
+    border-radius: 1em; 
+    /* box-shadow: 1 15px 25px rgba(0,0,0,.6);   */
 }
 #wrapper nav img{
     display: block;
@@ -370,48 +372,80 @@ dt{
     margin-bottom: 1em ;
     border-radius: 1em;
     width: 80%;
+    box-shadow: 0 1px 10px rgba(0,0,0,.6);
 }
+
 #wrapper main article h3{
-    margin:0;
+    margin-bottom: 3%;
     padding:0;
     font-weight: normal;
     font-size:1em;
     font-family: 'Poiret One', cursive;
 }
+
 #wrapper main article time{
-    float:left;
     font-family: 'Poiret One', cursive;
+}
+
+#author{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 3%;
 }
 #wrapper main article address{
-    text-align: right;
-    margin-bottom: 1em;
+    margin-top: 1em;
     font-family: 'Poiret One', cursive;
+    font-size: 145%;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    margin: 0%;
+    text-transform: capitalize;
+}
+#profile{
+    width: 25% !important;
+    clip-path:ellipse(33% 50%);
+    object-fit: cover;
+    justify-content: end;
+    margin-bottom: 1%;
+
 }
 #wrapper main article p{
-    margin:0;
+    margin-top: 4%;
     font-family:'Josefin Sans', sans-serif;
-    /* font-weight: bolder; */
     text-align: justify;
     text-justify: inter-word;
     font-size: 18px;
 }
-#wrapper main article img{
+#photopost{
     margin-left: 10%;
+    margin-top: 4%;
+    margin-bottom: 3%;
     width: 80%;
 }
 #wrapper main article footer{
     margin-top: 1em;
     text-align: right;
 }
-#wrapper main article footer small{
+
+#wrapper main article footer form{
     float:left;
 }
+
+#taglist{
+    font-family: 'Poiret One', cursive;
+    font-size: larger;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
 
 #wrapper aside{
     background-color: #fff;
     flex: 1;
     padding:1em;
     border-radius: 1em;    
+    /* box-shadow: 0 15px 25px rgba(0,0,0,.6); */
 }
 #wrapper aside img{
     display: block;

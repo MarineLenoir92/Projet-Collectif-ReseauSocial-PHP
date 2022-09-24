@@ -43,10 +43,13 @@ session_start();
                     posts.created,
                     posts.user_id,
                     posts.photo,
-                    users.alias as author_name,  
-                    count(likes.id) as like_number,  
+                    users.alias as author_name, 
+                    users.photo as profile,
+                    count(likes.post_id) as like_number,
+                  
                     GROUP_CONCAT(DISTINCT tags.label) AS taglist 
                     FROM posts
+                  
                     JOIN users ON  users.id=posts.user_id
                     LEFT JOIN posts_tags ON posts.id = posts_tags.post_id  
                     LEFT JOIN tags       ON posts_tags.tag_id  = tags.id 
@@ -71,18 +74,23 @@ session_start();
                 {
                     ?>
                     <article>
+                        <div id="author">
+                            <img src=<?php echo $post['profile'] ?> id="profile" alt="Photo Profile Auteur"/>
+                            <a href="wall.php?user_id=<?php echo $post['user_id']?>"><address><?php echo $post['author_name'] ?></address></a>
+                        </div>
                         <h3>
                             <time><?php echo $post['created'] ?></time> 
                         </h3>
-                        
-                        <a href="wall.php?user_id=<?php echo $post['user_id']?>"><address>Par <?php echo $post['author_name'] ?></address></a>
                         <div>
                             <p><?php echo $post['content'] ?></p>
-                            <img src=<?php echo $post['photo']?>/>
+                            <img src=<?php echo $post['photo']?> id="photopost" alt="Photo illustrant Post" />
                         </div>
                         <footer>
-                            <small>♥<?php echo $post['like_number'] ?></small>
-                            <a href="">#<?php echo $post['taglist'] ?></a>
+                            <!-- <small>♥<?php echo $post['like_number'] ?></small> -->
+                            <form action="news.php" method="POST">
+                                <input type="submit" name="like_number" value="♥" id="like"/><?php echo $post['like_number'] ?>
+                            </form>
+                            <a href="" id="taglist">#<?php echo $post['taglist'] ?></a>
                         </footer>
                     </article>
                     <?php

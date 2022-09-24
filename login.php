@@ -11,9 +11,13 @@ session_start();
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+        <link href=https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css>
     </head>
     <body> 
-        <video id="backgroundvideo" autoplay loop muted poster="videologin.mp4">
+        <!-- <video id="backgroundvideo" autoplay loop muted poster="videologin.mp4">
+            <source src="videologin.mp4" type="video/mp4">
+        </video> -->
+        <video class="w-100" autoplay loop muted>
             <source src="videologin.mp4" type="video/mp4">
         </video>
             
@@ -101,4 +105,5 @@ session_start();
                 </article>
             </main>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
 </html>
